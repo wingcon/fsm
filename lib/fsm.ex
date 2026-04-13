@@ -33,7 +33,7 @@ defmodule Fsm do
         %{fsm | state: next_state}
       end
 
-      defp handle_action_response((%__MODULE__{} = fsm, {:new_data, new_data}) do
+      defp handle_action_response(%__MODULE__{} = fsm, {:new_data, new_data}) do
         %{fsm | data: new_data}
       end
 
