@@ -29,12 +29,12 @@ defmodule Fsm do
         end)
       end
 
-      defp handle_action_response(fsm, {:next_state, next_state}) do
-        %__MODULE__{fsm | state: next_state}
+      defp handle_action_response(%__MODULE__{} = fsm, {:next_state, next_state}) do
+        %{fsm | state: next_state}
       end
 
-      defp handle_action_response(fsm, {:new_data, new_data}) do
-        %__MODULE__{fsm | data: new_data}
+      defp handle_action_response((%__MODULE__{} = fsm, {:new_data, new_data}) do
+        %{fsm | data: new_data}
       end
 
       defp handle_action_response(fsm, {:respond, response}) do
